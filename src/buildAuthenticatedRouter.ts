@@ -69,6 +69,8 @@ export const buildAuthenticatedRouter = (
       ...sessionOptions,
       secret: auth.cookiePassword,
       name: auth.cookieName || "adminjs",
+      resave: true,
+      saveUninitialized: true
     })
   );
   router.use(formidableMiddleware(formidableOptions));
